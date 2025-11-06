@@ -1,18 +1,18 @@
-🧠 Task 2: Handwritten Digit Classification using Random Forest
+## 🧠 Task 2: Handwritten Digit Classification using Random Forest
 
 Author: Soumya Sekhar Banerjee
 Matriculation Number: 100004430
 University: SRH University of Applied Science
 Course: Masters in Engineering – Artificial Intelligence
 
-📄 Abstract
+## 📄 Abstract
 
 Random Forest is a supervised ensemble learning algorithm used for both classification and regression.
 It builds multiple decision trees during training and outputs the class that is the mode of the predictions (for classification) or the mean prediction (for regression).
 
 It is based on the principle of “wisdom of the crowd” — combining multiple weak learners (decision trees) to form a strong overall model with reduced variance and improved generalization.
 
-Key Characteristics
+## Key Characteristics
 
 Ensemble method: Combines multiple decision trees.
 
@@ -22,7 +22,7 @@ Stability: Reduces variance compared to a single decision tree.
 
 Interpretability: Provides feature importance estimates.
 
-🎯 Aim of the Experiment
+## 🎯 Aim of the Experiment
 
 To build a supervised ensemble classifier for handwritten digits (0–9) using the Random Forest algorithm on the MNIST dataset.
 
@@ -32,13 +32,13 @@ Output: Predicted digit label (0–9)
 
 Evaluation: Accuracy and confusion matrix
 
-🧩 Mathematical Intuition
-1. Ensemble of Decision Trees
+## 🧩 Mathematical Intuition
+# 1. Ensemble of Decision Trees
 
 Each tree is trained on a bagging sample (sampled with replacement).
 At each split, a random subset of features is considered.
 
-2. Decision Tree Function
+# 2. Decision Tree Function
 
 Each decision tree recursively partitions the feature space using decision rules until a stopping condition is met (e.g., max depth).
 
@@ -181,13 +181,13 @@ As the number of trees
 ∞
 n→∞, variance decreases.
 
-🔁 Task Overview and Workflow
+## 🔁 Task Overview and Workflow
 
 Algorithm: Random Forest
 Input: Pixel intensities (0–255) from MNIST images
 Output: Predicted digit (0–9)
 
-🧠 Training Steps
+## 🧠 Training Steps
 
 Load the data
 
@@ -229,7 +229,7 @@ Select final model
 
 Optimal trade-off between performance and runtime.
 
-📊 Model Evaluation: Confusion Matrix
+## 📊 Model Evaluation: Confusion Matrix
 Digit	Interpretation Summary
 0	968 correct, minor confusions with 2, 5, 6
 1	1122 correct, excellent precision
@@ -243,8 +243,8 @@ Accuracy	95.59%
 Most Accurate Digits	1, 0, 7
 Most Confused Digits	3, 5, 8, 9
 Model Generalization	Strong, minimal overfitting
-🌲 Random Forest Parameters
-1. n_estimators: Number of Trees
+## 🌲 Random Forest Parameters
+# 1. n_estimators: Number of Trees
 n_estimators	Effect	Typical Result
 10–50	Too few trees → underfitting	Low accuracy
 100–300	Reasonable ensemble size	High accuracy
@@ -253,7 +253,7 @@ n_estimators	Effect	Typical Result
 
 More trees improve averaging but increase runtime.
 
-2. oob_score=True: Out-of-Bag Evaluation
+# 2. oob_score=True: Out-of-Bag Evaluation
 
 Out-of-Bag (OOB) samples are those not used in tree training.
 OOB accuracy serves as an internal validation metric — similar to cross-validation.
@@ -264,7 +264,7 @@ oob_score	Uses left-out data for validation	Needs enough trees for reliability
 
 OOB ≈ Test accuracy → confirms model generalization.
 
-⚙ Model Variants and Performance
+## ⚙ Model Variants and Performance
 Model	Key Settings	Description	Accuracy
 rf1	100 trees	Baseline	~95%
 rf2	50 trees	Fewer trees → underfit	↓
@@ -274,7 +274,7 @@ rf5–rf7	750–1000 trees	Diminishing returns	≈ same
 rf8	500 trees, max_features=2	More randomness	≈ rf4
 📈 Effect of n_estimators on Accuracy
 
-Interpretation of Performance Curve
+## Interpretation of Performance Curve
 
 Observation	Explanation
 At 10 trees	OOB ≈ 0.84, Test ≈ 0.92 → underfitting
@@ -283,11 +283,11 @@ At 100 trees	Stable accuracy ~95.5%
 At 250–500 trees	Plateau — best balance
 Beyond 500	No real improvement
 
-Conclusion:
+## Conclusion:
 
 The optimal configuration lies between 250–500 trees, giving accuracy ≈ 95.6–96% with minimal variance.
 
-⚙️ Hyperparameter Tuning
+## ⚙️ Hyperparameter Tuning
 
 Key hyperparameters:
 
@@ -313,7 +313,7 @@ Adjusting max_features
 
 This improved accuracy from ~92% → ~96%.
 
-🧾 Conclusion
+## 🧾 Conclusion
 
 The Random Forest classifier achieved ~95.6–96% accuracy on MNIST.
 
@@ -329,7 +329,7 @@ Most misclassifications were between visually similar digits (3–5–8–9).
 
 Random Forest proved to be a robust, interpretable, and high-performing baseline for handwritten digit recognition.
 
-📚 References
+## 📚 References
 
 BuiltIn: Random Forest Algorithm
 
